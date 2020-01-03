@@ -6,8 +6,8 @@ class Character extends Model {
    public name: string
    public race: string
    public lore: string
-   public user_id : number
-   public photograph_id : number
+   public user_uuid : string
+   public thumbnail : string
    private connection : Sequelize
 
 }
@@ -19,37 +19,33 @@ Character.init({
     primaryKey: true,
   },
   name: {
-    type: new DataTypes.STRING(50),
+    type: new DataTypes.STRING(45),
     allowNull: false,
   },
   race: {
-    type: new DataTypes.STRING(50),
+    type: new DataTypes.STRING(45),
     allowNull: false,
   },
   lore: {
     type: new DataTypes.STRING(1000),
     allowNull: false,
   },
-
+  thumbnail : {
+    type: new DataTypes.STRING(256),
+    allowNull: false
+  },
 
 
 
   //Isso é uma FOREING KEY para Usuarios
-  user_id : {
-    type: new DataTypes.INTEGER,
+  user_uuid : {
+    type:  DataTypes.UUIDV4,
     references : {
         model: 'Users',
-        key: 'id'
+        key: 'uuid'
     }
   },
-  //Isso é uma FOREING KEY para Usuarios
-  photograph_id : {
-    type: new DataTypes.INTEGER,
-    references : {
-        model: 'Photographs',
-        key: 'id'
-    }
-  }
+    
 },{
 
   sequelize: connection,

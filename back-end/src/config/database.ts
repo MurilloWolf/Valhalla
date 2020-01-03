@@ -6,7 +6,7 @@ const DBconfig = {
     password: "mwolf1234",
     database: "taberna",
     define: {
-        timestamp: false 
+        timestamp: true 
     }
 }
 

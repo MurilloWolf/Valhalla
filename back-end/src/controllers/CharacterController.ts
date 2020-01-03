@@ -1,22 +1,51 @@
 import { Request , Response} from 'express'
 import Character from '../model/Character'
 import  '../database'
-import Characters from '../model/Character';
-class UserController {
+class CharacterController {
     
     async index(req : Request, res : Response) :Promise<Response>{
-        const users = await Character.findAll();
-        return res.json(users);
+        const { race } = req.query
+        let characters 
+  
+            if(!race){
+                characters = await Character.findAll()
+                return res.status(200).json(characters)
+            }
+            characters = await Character.findAll({ where:{race}})
+            return res.status(200).json(characters);    
+           
+
+      
+
     }
 
-    async create(req: Request, res : Response) :Promise <Response>{
+    async store(req: Request, res : Response) :Promise <Response>{
+        const {filename} = req.file
         const {name, race, lore} = req.body
+        const {uuid} = req.headers
+
+
+
+        try{
+            const character = await Character.create({name,race,lore,user_uuid: uuid, thumbnail: filename})
+            return res.status(200).send(character)
+        }catch(err){
+            return res.status(400).send(err)
+        }
+        /*
         const person = await Character.create({
             name,race,lore
-        })
+        }) */
 
-        return res.json(person)
     }
+
+   /*  async show(req: Request, res : Response) :Promise <Response>{
+
+    }
+
+    async update(req: Request, res : Response) :Promise <Response>{
+        
+    } */
 }
 
-export default new UserController()
+export default new CharacterController()
