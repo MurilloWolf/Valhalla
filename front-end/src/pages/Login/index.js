@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 import "./login.css";
 import logo from "../../public/imgs/logo1.png";
+import logoSmall from "../../public/imgs/logo-small.png";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -14,7 +15,7 @@ export default function Login() {
         <aside className={"aside-left"}>
           <section className={"valhalla-section"}>
             <div className={"logo"}>
-              <img src={logo} />
+              <img src={logo} alt="logoValhalla" />
               <h1>Bem vindo a VALHALLA</h1>
             </div>
             <p>
@@ -34,12 +35,15 @@ export default function Login() {
         </aside>
         <aside className={"aside-right"}>
           <form className={"login-form"}>
+            <figure className={"logoMobile"}>
+              <img src={logoSmall} alt="logoValhalla" />
+            </figure>
             <div className="icon-input">
               <FontAwesomeIcon icon={faUser} color="#db2b39" />
-              <input type="email" placeHolder="Email" autoFocus required />
+              <input type="email" placeholder="Email" autoFocus required />
             </div>
             <div className="icon-input">
-              <label for="show-password">
+              <label htmlFor="show-password">
                 {showPassword ? (
                   <FontAwesomeIcon icon={faEye} color="#db2b39" />
                 ) : (
@@ -57,8 +61,9 @@ export default function Login() {
               <input
                 type={showPassword ? "text" : "password"}
                 id="password-field"
-                placeHolder="Senha"
+                placeholder="Senha"
                 required
+                autoComplete="on"
               />
             </div>
             <button>Login</button>

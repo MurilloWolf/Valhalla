@@ -39,7 +39,7 @@
 .login-form {
   text-align: center;
   width: 80%;
-  height: 50%;
+  height: 60%;
   display: flex;
   flex-flow: column nowrap;
 
@@ -129,4 +129,40 @@ button:hover {
 .logo h1 {
   font-size: 32px;
   font-family: "Special Elite", cursive;
+}
+
+.logoMobile {
+  width: 128px;
+  height: 128px;
+  display: none;
+}
+
+/* =================== Mobile =================== */
+
+@media screen and (max-width: 450px) {
+  .container,
+  .wrapper {
+    height: 100%;
+  }
+
+  .aside-left {
+    display: none;
+  }
+
+  .aside-right {
+    height: 100%;
+  }
+  .login-form {
+    height: 100%;
+  }
+
+  .logoMobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  hr {
+    display: none;
+  }
 }

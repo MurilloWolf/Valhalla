@@ -1,18 +1,14 @@
 import React from "react";
 
-/*FontAwesome */
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+/*config FontAwesome */
 
 import "./public/main.css";
 import Login from "./pages/Login";
-
-library.add(fab);
-
+import Feed from "./pages/Feed";
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Feed />
     </div>
   );
 }

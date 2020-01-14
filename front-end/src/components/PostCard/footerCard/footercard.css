@@ -1,0 +1,8 @@
+.footerwrapper {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
