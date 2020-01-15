@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -70,8 +71,12 @@ export default function Login() {
 
             <div className={"support-form"}>
               <hr />
-              <a>Esqueci minha senha </a>
-              <a>Ainda não sou cadastrado</a>
+              <Link to="" className="link">
+                Esqueci minha senha{" "}
+              </Link>
+              <Link to="/Cadastrar" className="link">
+                Ainda não sou cadastrado
+              </Link>
             </div>
           </form>
         </aside>

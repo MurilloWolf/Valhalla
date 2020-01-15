@@ -9,7 +9,7 @@
 }
 
 .logoDisplay {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -41,6 +41,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.newPostMobile {
+  display: none;
+}
+
+.newpost {
+  display: flex;
+}
+
 /* ===================== Responsive =====================*/
 @media screen and (max-width: 1465px) {
   .logoDisplay {
@@ -61,7 +69,17 @@
 
   .logoDisplay {
     margin: 0;
-    position: absolute;
+
     width: 100%;
+  }
+
+  .newPostMobile {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .newpost {
+    display: none;
   }
 }

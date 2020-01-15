@@ -57,6 +57,7 @@ input {
   outline: none;
   padding: 5px 10px;
   border: none;
+  background: transparent;
 }
 
 #show-password {
@@ -92,6 +93,16 @@ button:hover {
   flex-flow: column nowrap;
   line-height: 1.5rem;
   font-size: 0.9rem;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none !important;
+  color: black;
+}
+
+.link:hover {
+  color: #db2b39;
 }
 
 .support-form hr {

@@ -1,0 +1,21 @@
+.newPost {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.newPost button {
+  line-height: 16px;
+  font-size: 16px !important;
+  border: none;
+  box-shadow: none;
+}
+
+.newPost button:hover {
+  background: transparent;
+}
+.newPost:hover {
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}

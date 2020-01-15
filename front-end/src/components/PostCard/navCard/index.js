@@ -9,7 +9,7 @@ export default function NavCard(props) {
       </figure>
       <div className="userName">
         <h3>@Miiraajane</h3>
-        <time datetime="2020-01-13 19:00"> 13/01/2020 </time>
+        <time dateTime="2020-01-13 19:00"> 13/01/2020 </time>
       </div>
     </div>
   );
